@@ -37,6 +37,13 @@ Tomcat v9 is only required if you wish to deploy the Fineract WAR to a separate 
 Instructions how to run for local development
 ============
 
+If you want to use a local MySQL instance:
+```shell
+$ sudo mysql -u root  # Login as root to your MySQL database.
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'mysql'; # Set the right credentials for the database.
+mysql> flush privileges;  # Flush privileges for the database.
+```
+
 Run the following commands:
 1. `./gradlew createDB -PdbName=fineract_tenants`
 1. `./gradlew createDB -PdbName=fineract_default`
